@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex: 1起作用，得给父盒子高度，max-height: 100vh 取整个屏幕高度为最大高度(且可以自适应)，max-height: calc(100% - 260px)  calc属性作用强大</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            max-height: 100vh;
+        }
+        .wrap {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            height: 60px;
+            background-color: burlywood;
+        }
+        .main {
+            background-color: rgb(129, 111, 111);
+            max-height: calc(100% - 260px);
+            overflow: auto;
+        }
+        .footer {
+            height: 200px;
+            background-color: rgb(24, 3, 3);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">Header</div>
+        <div class="main">
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+            Main
+            </br>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
