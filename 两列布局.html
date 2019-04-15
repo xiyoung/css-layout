@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>两列布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .wrapper {
+            border: 1px dotted green;
+            width: 820px;
+            margin: 0 auto;
+        }
+        .container {
+            border: 1px solid gray;
+            width: 800px;
+            height: 200px;
+            margin-top: 10px;
+        }
+        .demo1 .left{
+            width: 60px;
+            height: 200px;
+            background-color: rgb(158, 103, 103);
+            float: left;
+        }
+        .demo1 .right{
+            height: 200px;
+            margin-left: 60px;
+            background-color: rgb(51, 173, 57);
+        }
+        .demo2 .left {
+            background-color: #f00;
+            float: left;
+            width: 100px;
+            height: 200px; 
+        }
+        .demo2 .right-fix {
+            float: right;
+            width: 100%;
+            margin-left: -100px; /*正值大于或等于#left的宽度,才能上移一行*/
+        }
+        .demo2 .right-fix .right {
+            margin-left: 100px; /*大于或等于#left的宽度,才不会遮挡#left*/
+            background-color: #0f0;
+            height: 200px;
+        }
+        .demo3 .left {
+            float: left;
+            width: 100px;
+            height: 200px; 
+            background-color: rgb(34, 112, 117);
+        }
+        .demo3 .right {
+            height: 200px;
+            background-color: rgb(29, 146, 35);
+            overflow: hidden;
+        }
+        .demo4 {
+            position: relative;
+        }
+        .demo4 .left {
+            position: absolute;
+            width: 100px;
+            height: 200px;
+            background-color: rgb(73, 41, 41);
+            left: 0;
+        }
+        .demo4 .right {
+            position: absolute;
+            height: 200px;
+            background-color: rgb(100, 48, 102);
+            left: 100px;
+            right: 0;
+        }
+        .demo5 {
+            display: flex;
+        }
+        .demo5 .left{
+            width: 100px;
+            background-color: rgb(41, 69, 73);
+        }
+        .demo5 .right {
+            flex: 1;
+            background-color: rgb(29, 22, 73);
+        }
+    </style>
+</head>
+<body>
+   <div class="wrapper">
+        <h5>左侧定宽，右侧自适应1</h5>
+        <div class="demo1 container">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <h5>左侧定宽，右侧自适应2</h5>
+        <div class="demo2 container">
+            <div class="left"></div>
+            <div class="right-fix">
+                <div class="right"></div>
+            </div>
+        </div>
+        <h5>左侧定宽，右侧自适应3</h5>
+        <div class="demo3 container">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <h5>左侧定宽，右侧自适应4</h5>
+        <div class="demo4 container">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <h5>左侧定宽，右侧自适应5</h5>
+        <div class="demo5 container">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+
+   </div> 
+</body>
+</html>
